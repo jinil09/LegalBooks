@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LegalBooks</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Add CSS styles here */
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">LegalBooks</div>
             <nav>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div> <!-- Toggle button -->
                 <ul>
                     <li><a href="#">Lawyer Search</a></li>
                     <li><a href="#">Jobs</a></li>
@@ -86,8 +91,157 @@
                 </form>
             </section>
         </div>
+        
+        <!-- New Section for Document Templates -->
+        <section class="document-templates">
+            <h1>Generate Documents From 10,000+ Templates</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Editable documents such as Rental Agreements .... e.t.c.">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="template-categories">
+                <div class="template-item">
+                    <img src="path/to/rental-icon.png" alt="Rental">
+                    <p>Rental</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/vehicle-rental-icon.png" alt="Vehicle Rentals">
+                    <p>Vehicle Rentals</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/employer-icon.png" alt="Employer">
+                    <p>Employer</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/subcontractor-icon.png" alt="Subcontractor">
+                    <p>Subcontractor</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/accounting-icon.png" alt="Accounting">
+                    <p>Accounting</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/demand-note-icon.png" alt="Demand Note">
+                    <p>Demand Note</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/equipment-license-icon.png" alt="Equipment License">
+                    <p>Equipment License</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/cofounder-agreement-icon.png" alt="Cofounder Agreement">
+                    <p>Cofounder Agreement</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/eviction-notice-icon.png" alt="Eviction Notice">
+                    <p>Eviction Notice</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/fund-raising-icon.png" alt="Fund Raising">
+                    <p>Fund Raising</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/loan-agreement-icon.png" alt="Loan Agreement">
+                    <p>Loan Agreement</p>
+                </div>
+                <div class="template-item">
+                    <img src="path/to/partnership-icon.png" alt="Partnership">
+                    <p>Partnership</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-lawyers">
+            <h1>Search For Lawyers</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Area of Practice">
+                <select>
+                    <option value="">Specialization</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <input type="text" placeholder="City">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="lawyer-cards">
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="lawyer1.jpg" alt="Raghavan">
+                    <h3>Raghavan</h3>
+                    <p>Hyderabad</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>9 Reviews</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Civil Lawyer</div>
+                    <img src="lawyer2.jpg" alt="Arjun">
+                    <h3>Arjun</h3>
+                    <p>Bangalore</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>1 Review</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Consumer Lawyer</div>
+                    <img src="lawyer3.jpg" alt="Srinivas">
+                    <h3>Srinivas</h3>
+                    <p>Delhi</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>24 Reviews</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Divorce Lawyer</div>
+                    <img src="lawyer4.jpg" alt="Aziz Mehaboob">
+                    <h3>Aziz Mehaboob</h3>
+                    <p>Chennai</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>11 Reviews</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Tax Lawyer</div>
+                    <img src="lawyer5.jpg" alt="Jashwant">
+                    <h3>Jashwant</h3>
+                    <p>Hyderabad</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>9 Reviews</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Corporate Lawyer</div>
+                    <img src="lawyer6.jpg" alt="Rajesh">
+                    <h3>Rajesh</h3>
+                    <p>Bangalore</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>1 Review</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Family Lawyer</div>
+                    <img src="lawyer7.jpg" alt="Shalini">
+                    <h3>Shalini</h3>
+                    <p>Delhi</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>24 Reviews</p>
+                </div>
+                <div class="lawyer-card">
+                    <div class="lawyer-type">Cyber Law</div>
+                    <img src="lawyer8.jpg" alt="Vishwa">
+                    <h3>Vishwa</h3>
+                    <p>Chennai</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>1 Review</p>
+                </div>
+            </div>
+        </section>
+        
     </main>
     
-    <script src="main.js"></script>
+    <script>
+        // JavaScript for toggling the menu on smaller screens
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('header nav ul');
+        
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
