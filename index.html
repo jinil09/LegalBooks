@@ -4,248 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LegalBooks</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome for icons -->
-    <style>
-        /* Add CSS styles here */
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">LegalBooks</div>
-            <nav>
-                <div class="menu-toggle"><i class="fas fa-bars"></i></div> <!-- Toggle button -->
-                <ul>
-                    <li><a href="#">Lawyer Search</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Free Consultation</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white border-b border-gray-300 relative">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="text-2xl font-bold">LegalBooks</div>
+            <nav class="hidden md:flex space-x-4 nav-menu">
+                <a href="#" class="hover:text-green-500">Lawyer Search</a>
+                <a href="#" class="hover:text-green-500">Jobs</a>
+                <a href="#" class="hover:text-green-500">Free Consultation</a>
+                <a href="#" class="hover:text-green-500">Pricing</a>
+                <a href="#" class="hover:text-green-500">Contact us</a>
             </nav>
-            <div class="auth-buttons">
-                <button class="login-btn">Login</button>
-                <button class="signup-btn">Sign up</button>
+            <div class="space-x-4 hidden md:flex">
+                <button class="px-4 py-2 border border-gray-800 text-gray-800 rounded-md">Login</button>
+                <button class="px-4 py-2 bg-green-500 text-white rounded-md">Sign up</button>
             </div>
+            <div class="md:hidden navbar-toggler">
+                <i class="fas fa-bars text-2xl cursor-pointer"></i>
+            </div>
+        </div>
+        <div class="mobile-menu md:hidden">
+            <a href="#" class="hover:text-green-500">Lawyer Search</a>
+            <a href="#" class="hover:text-green-500">Jobs</a>
+            <a href="#" class="hover:text-green-500">Free Consultation</a>
+            <a href="#" class="hover:text-green-500">Pricing</a>
+            <a href="#" class="hover:text-green-500">Contact us</a>
+            <button class="px-4 py-2 border border-gray-800 text-gray-800 rounded-md">Login</button>
+            <button class="px-4 py-2 bg-green-500 text-white rounded-md">Sign up</button>
         </div>
     </header>
     
     <main>
-        <section class="hero">
-            <h1>India’s Largest Legal Platform</h1>
-            <button class="get-started-btn">Get Started Now</button>
-            <p>Legal Tech Product 2024</p>
+        <section class="text-center py-8 bg-white my-4">
+            <h1 class="text-4xl font-bold mb-4">India’s Largest Legal Platform</h1>
+            <button class="px-6 py-3 bg-gray-800 text-white rounded-md mb-4">Get Started Now</button>
+            <p class="text-gray-600">Legal Tech Product 2024</p>
         </section>
         
-        <div class="form-container">
-            <section class="login-form">
-                <h2>Log In</h2>
-                <button class="google-login">
-                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google logo">
+        <div class="container mx-auto py-8 form-container">
+            <section class="p-8 m-4 login-form flex flex-col items-center text-center">
+                <h2 class="text-3xl font-bold mb-4">Log In</h2>
+                <button class="w-full bg-blue-500 text-white px-4 py-3 rounded-md flex items-center justify-center mb-4">
+                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google logo" class="mr-2">
                     Continue with Google
                 </button>
-                <hr style='height: 2px; width: 100%; background-color:rgb(232, 227, 227) ;
-                    border: 10px;
-                    border-radius: 10px;
-                    margin-bottom: 1.5rem;
-                '>
-                <form>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                    <button type="submit" class="login-button">Log In</button>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                    <a href="#" class="create-account">Create new account</a>
+                <hr class="w-full h-1 bg-gray-200 rounded-full mb-6">
+                <form class="w-full flex flex-col">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required class="w-full px-4 py-2 mb-4 border rounded-md">
+                    <input type="password" id="password" name="password" placeholder="Password" required class="w-full px-4 py-2 mb-4 border rounded-md">
+                    <button type="submit" class="w-full bg-green-500 text-white px-4 py-3 rounded-md mb-4">Log In</button>
+                    <a href="#" class="text-gray-800 mb-4">Forgot Password?</a>
+                    <a href="#" class="text-gray-800 underline">Create new account</a>
                 </form>
             </section>
-            <section class="consultation-form">
-                <form id="consultation-form">
-                    <h2>Schedule Free Legal Consultation</h2>
-                    <label for="title">Name*</label>
-                    <div class="name-input">
-                        <select id="title" name="title">
-                            <option value="Mr.">Mr.</option>
-                            <option value="Ms.">Ms.</option>
-                        </select>
-                        <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-                        <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+            <section class="bg-white p-8 m-4 rounded-lg shadow-lg consultation-form">
+                <form id="consultation-form" class="space-y-4">
+                    <h2 class="text-3xl font-bold mb-6">Schedule Free Legal Consultation</h2>
+                    <div class="space-y-4">
+                        <label for="title" class="block font-bold">Name*</label>
+                        <div class="flex flex-wrap space-y-4 md:space-y-0 md:space-x-4">
+                            <select id="title" name="title" class="w-full md:flex-1 border rounded-md p-2">
+                                <option value="Mr.">Mr.</option>
+                                <option value="Ms.">Ms.</option>
+                            </select>
+                            <input type="text" id="first-name" name="first-name" placeholder="First Name" required class="w-full md:flex-1 border rounded-md p-2">
+                            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required class="w-full md:flex-1 border rounded-md p-2">
+                        </div>
                     </div>
-                    
-                    <label for="area">Area/City*</label>
-                    <select id="area" name="area" required>
-                        <option value="">Select your area</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                    
-                    <label for="practice">Select Area of Practice</label>
-                    <select id="practice" name="practice">
-                        <option value="">Select the area where you think you need help</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                    
-                    <label for="mobile">Mobile Number*</label>
-                    <div class="mobile-input">
-                        <select id="country-code" name="country-code">
-                            <option value="+91">+91</option>
-                            <!-- Add more country codes as needed -->
+                    <div class="space-y-4">
+                        <label for="area" class="block font-bold">Area/City*</label>
+                        <select id="area" name="area" required class="w-full border rounded-md p-2">
+                            <option value="">Select your area</option>
+                            <!-- Add more options as needed -->
                         </select>
-                        <input type="text" id="mobile" name="mobile" placeholder="984803XXXX" required>
                     </div>
-                    
-                    <button type="submit" id="send-otp">Send OTP</button>
+                    <div class="space-y-4">
+                        <label for="practice" class="block font-bold">Select Area of Practice</label>
+                        <select id="practice" name="practice" class="w-full border rounded-md p-2">
+                            <option value="">Select the area where you think you need help</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="space-y-4">
+                        <label for="mobile" class="block font-bold">Mobile Number*</label>
+                        <div class="flex flex-wrap space-y-4 md:space-y-0 md:space-x-4">
+                            <select id="country-code" name="country-code" class="w-full md:flex-1 border rounded-md p-2">
+                                <option value="+91">+91</option>
+                                <!-- Add more country codes as needed -->
+                            </select>
+                            <input type="text" id="mobile" name="mobile" placeholder="984803XXXX" required class="w-full md:flex-1 border rounded-md p-2">
+                        </div>
+                    </div>
+                    <button type="submit" id="send-otp" class="w-full bg-gray-800 text-white px-4 py-3 rounded-md">Send OTP</button>
                 </form>
             </section>
         </div>
         
-        <!-- New Section for Document Templates -->
-        <section class="document-templates">
-            <h1>Generate Documents From 10,000+ Templates</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for Editable documents such as Rental Agreements .... e.t.c.">
-                <button type="submit"><i class="fas fa-search"></i></button>
+        <!-- Existing section for Document Templates -->
+        <section class="bg-white p-8 my-4 text-center">
+            <h1 class="text-3xl font-bold mb-8">Generate Documents From 10,000+ Templates</h1>
+            <div class="flex justify-center mb-8">
+                <input type="text" placeholder="Search for Editable documents such as Rental Agreements .... e.t.c." class="w-3/4 md:w-1/2 border rounded-lg shadow p-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2">Search</button>
             </div>
-            <div class="template-categories">
-                <div class="template-item">
-                    <img src="path/to/rental-icon.png" alt="Rental">
-                    <p>Rental</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="path/id.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <p class="text-lg">Rental Agreement</p>
                 </div>
-                <div class="template-item">
-                    <img src="path/to/vehicle-rental-icon.png" alt="Vehicle Rentals">
-                    <p>Vehicle Rentals</p>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="path/id.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <p class="text-lg">Vehicle Rentals</p>
                 </div>
-                <div class="template-item">
-                    <img src="path/to/employer-icon.png" alt="Employer">
-                    <p>Employer</p>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="path/id.png" alt="Invoices" class="w-16 mb-2">
+                    <p class="text-lg">Invoices</p>
                 </div>
-                <div class="template-item">
-                    <img src="path/to/subcontractor-icon.png" alt="Subcontractor">
-                    <p>Subcontractor</p>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="path/id.png" alt="Equipment License" class="w-16 mb-2">
+                    <p class="text-lg">Equipment License</p>
                 </div>
-                <div class="template-item">
-                    <img src="path/to/accounting-icon.png" alt="Accounting">
-                    <p>Accounting</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/demand-note-icon.png" alt="Demand Note">
-                    <p>Demand Note</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/equipment-license-icon.png" alt="Equipment License">
-                    <p>Equipment License</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/cofounder-agreement-icon.png" alt="Cofounder Agreement">
-                    <p>Cofounder Agreement</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/eviction-notice-icon.png" alt="Eviction Notice">
-                    <p>Eviction Notice</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/fund-raising-icon.png" alt="Fund Raising">
-                    <p>Fund Raising</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/loan-agreement-icon.png" alt="Loan Agreement">
-                    <p>Loan Agreement</p>
-                </div>
-                <div class="template-item">
-                    <img src="path/to/partnership-icon.png" alt="Partnership">
-                    <p>Partnership</p>
-                </div>
+                <!-- Repeat the above structure for more document boxes -->
             </div>
         </section>
-
-        <section class="search-lawyers">
-            <h1>Search For Lawyers</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Area of Practice">
-                <select>
-                    <option value="">Specialization</option>
-                    <!-- Add more options as needed -->
-                </select>
-                <input type="text" placeholder="City">
-                <button><i class="fas fa-search"></i></button>
+        
+        <section class="text-center py-8 bg-white my-4">
+            <h1 class="text-4xl font-bold mb-5">Search For Lawyers</h1>
+            <div class="py-4">
+                <div class="max-w-screen-md mx-auto px-4">
+                    <div class="bg-white shadow-lg rounded-lg p-4 flex flex-col md:flex-row items-center gap-4">
+                        <input type="text" placeholder="Area of Practice" class="input-field mb-2 md:mb-0">
+                        <select class="input-field mb-2 md:mb-0">
+                            <option value="">Specialization</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                        <input type="text" placeholder="City" class="input-field mb-2 md:mb-0">
+                        <button class="search-button bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"><i class="fas fa-search"></i> Search</button>
+                    </div>
+                </div>
             </div>
-            <div class="lawyer-cards">
-                <div class="lawyer-card">
+            
+            
+            
+            <div class="lawyer-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+                <!-- Example lawyer card, repeat as needed -->
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="lawyer1.jpg" alt="Raghavan">
-                    <h3>Raghavan</h3>
-                    <p>Hyderabad</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>9 Reviews</p>
+                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
                 </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Civil Lawyer</div>
-                    <img src="lawyer2.jpg" alt="Arjun">
-                    <h3>Arjun</h3>
-                    <p>Bangalore</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>1 Review</p>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
                 </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Consumer Lawyer</div>
-                    <img src="lawyer3.jpg" alt="Srinivas">
-                    <h3>Srinivas</h3>
-                    <p>Delhi</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>24 Reviews</p>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
                 </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Divorce Lawyer</div>
-                    <img src="lawyer4.jpg" alt="Aziz Mehaboob">
-                    <h3>Aziz Mehaboob</h3>
-                    <p>Chennai</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>11 Reviews</p>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
                 </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Tax Lawyer</div>
-                    <img src="lawyer5.jpg" alt="Jashwant">
-                    <h3>Jashwant</h3>
-                    <p>Hyderabad</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>9 Reviews</p>
-                </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Corporate Lawyer</div>
-                    <img src="lawyer6.jpg" alt="Rajesh">
-                    <h3>Rajesh</h3>
-                    <p>Bangalore</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>1 Review</p>
-                </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Family Lawyer</div>
-                    <img src="lawyer7.jpg" alt="Shalini">
-                    <h3>Shalini</h3>
-                    <p>Delhi</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>24 Reviews</p>
-                </div>
-                <div class="lawyer-card">
-                    <div class="lawyer-type">Cyber Law</div>
-                    <img src="lawyer8.jpg" alt="Vishwa">
-                    <h3>Vishwa</h3>
-                    <p>Chennai</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>1 Review</p>
-                </div>
+                
+                <!-- Repeat other lawyer-card elements as needed -->
             </div>
         </section>
         
-    </main>
-    
-    <script>
-        // JavaScript for toggling the menu on smaller screens
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('header nav ul');
         
-            menuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('show');
-            });
+        
+        
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto text-center">
+            &copy; 2024 LegalBooks. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.navbar-toggler').addEventListener('click', () => {
+            document.querySelector('.mobile-menu').classList.toggle('visible');
         });
     </script>
 </body>
