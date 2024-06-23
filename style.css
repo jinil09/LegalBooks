@@ -226,3 +226,102 @@ transform: scale(1.05);
         font-size: 20px;
     }
 }
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears on top of other content */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.3s ease;
+}
+
+.popup-content {
+    background-color: #fff; /* White background for the popup */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto; /* Enable scrolling if content exceeds popup height */
+    text-align: left; /* Align text and content to the left */
+}
+
+.popup-container.active {
+    visibility: visible;
+    opacity: 1; /* Fully visible */
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-button {
+    background-color: #ff4444; /* Red background */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.checkbox-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.checkbox-list label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkbox-list input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.search-button {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
