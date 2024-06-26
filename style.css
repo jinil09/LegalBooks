@@ -225,6 +225,9 @@ transform: scale(1.05);
     .case-m-p{
         font-size: 20px;
     }
+    #search-custom-lawyer{
+        flex-direction: column;
+    }
 }
 
 .popup-container {
@@ -287,11 +290,12 @@ transform: scale(1.05);
 .input-field {
     width: 100%;
     padding: 8px;
-    font-size: 14px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    /* margin-bottom: 10px; */
     box-sizing: border-box;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .checkbox-list {
@@ -314,14 +318,49 @@ transform: scale(1.05);
 }
 
 .search-button {
-    background-color: #007bff; /* Blue background */
+    background-color: #37c41e; /* Blue background */
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .search-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #1a8b03; /* Darker blue on hover */
+}
+
+#search-custom-lawyer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+/* ----------------- */
+
+.hidden-custom-popup {
+    display: none;
+}
+.custom-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    width: 90vw;
+    text-align: left;
+}
+.custom-popup label {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+.custom-popup label:hover {
+    background-color: #f0f0f0;
 }
