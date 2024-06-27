@@ -318,12 +318,13 @@ transform: scale(1.05);
 }
 
 .search-button {
-    background-color: #37c41e; /* Blue background */
+    background-color: #37c41e; 
     color: white;
     border: none;
-    padding: 10px;
+    padding: 7px;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 2px 5px 9px rgba(0, 0, 0, 0.4);
 }
 
 .search-button:hover {
