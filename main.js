@@ -21,3 +21,7 @@ document.addEventListener('click', function(event) {
       closePopup();
   }
 });
+
+document.querySelector(".navbar-toggler").addEventListener("click", () => {
+  document.querySelector(".mobile-menu").classList.toggle("visible");
+});
