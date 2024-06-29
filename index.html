@@ -142,51 +142,51 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="rental.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <img src="icon/landinPage/rental.png" alt="Rental Agreement" class="w-16 mb-2">
                     <p class="text-lg">Rental Agreement</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="Vrental.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <img src="icon/landinPage/Vrental.png" alt="Vehicle Rentals" class="w-16 mb-2">
                     <p class="text-lg">Vehicle Rentals</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="employee.png" alt="Invoices" class="w-16 mb-2">
+                    <img src="icon/landinPage/employee.png" alt="Invoices" class="w-16 mb-2">
                     <p class="text-lg">Employer</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="subcontractor.png" alt="Equipment License" class="w-16 mb-2">
+                    <img src="icon/landinPage/subcontractor.png" alt="Equipment License" class="w-16 mb-2">
                     <p class="text-lg">Subcontractor</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="accounting.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <img src="icon/landinPage/accounting.png" alt="Rental Agreement" class="w-16 mb-2">
                     <p class="text-lg">Accounting</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="demandNote.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <img src="icon/landinPage/demandNote.png" alt="Vehicle Rentals" class="w-16 mb-2">
                     <p class="text-lg">Demand Note</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="Elicense.png" alt="Invoices" class="w-16 mb-2">
+                    <img src="icon/landinPage/Elicense.png" alt="Invoices" class="w-16 mb-2">
                     <p class="text-lg">Equipment License</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="coFounder Agreement.png" alt="Equipment License" class="w-16 mb-2">
+                    <img src="icon/landinPage/coFounder Agreement.png" alt="Equipment License" class="w-16 mb-2">
                     <p class="text-lg">cofounder Agreement</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="Eviction Notice.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <img src="icon/landinPage/Eviction Notice.png" alt="Rental Agreement" class="w-16 mb-2">
                     <p class="text-lg">Eviction Notice</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="Fund Raising.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <img src="icon/landinPage/Fund Raising.png" alt="Vehicle Rentals" class="w-16 mb-2">
                     <p class="text-lg">Fund Raising</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="loan agreement.png" alt="Invoices" class="w-16 mb-2">
+                    <img src="icon/landinPage/loan agreement.png" alt="Invoices" class="w-16 mb-2">
                     <p class="text-lg">Loan Agreement</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="patnership.png" alt="Equipment License" class="w-16 mb-2">
+                    <img src="icon/landinPage/patnership.png" alt="Equipment License" class="w-16 mb-2">
                     <p class="text-lg">Partnership</p>
                 </div>
                 
@@ -198,9 +198,16 @@
             <h1 class="text-4xl font-bold mb-5">Search For Lawyers</h1>
             <div class="py-4" id="search-custom-lawyer-container">
                 <div class="max-w-screen-md mx-auto px-4">
-                    <div class="" id="search-custom-lawyer">
+                    <div id="search-custom-lawyer">
                         <button class="input-field mb-2 md:mb-0 bg-blue-500 text-white px-4 py-2 rounded-md area-button" onclick="togglePopup()">Area Of Practice</button>
-                        <input type="text" placeholder="City" class="input-field mb-2 md:mb-0">
+                        <select class="input-field mb-2 md:mb-0">
+                            <option value="" disabled selected>Select City</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="bangalore">Bangalore</option>
+                            <!-- Add more options as needed -->
+                        </select>
                         <button class="search-button">Search</button>
                     </div>
                 </div>
@@ -440,7 +447,7 @@
                 <!-- Example lawyer card, repeat as needed -->
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -448,7 +455,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -456,7 +463,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -464,7 +471,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -472,7 +479,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -480,7 +487,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -488,7 +495,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -496,7 +503,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="icon/landinPage/Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -516,24 +523,24 @@
             <div class="container mx-auto flex flex-col md:flex-row items-center justify-evenly px-6">
                 <div class="md:w-1/4 text-left space-y-4 case-management">
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="ic1Doc.png" alt="Docs Icon" class="icon">
+                        <img src="icon/landinPage/ic1Doc.png" alt="Docs Icon" class="icon">
                         <span class="text-lg font-medium">DOCS</span>
                     </div>
-                    <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="ic2Doc.png" alt="Time Sheets Icon" class="icon">
+                    <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300" style="margin-top: 0px; margin-bottom: 16px;">
+                        <img src="icon/landinPage/ic2Doc.png" alt="Time Sheets Icon" class="icon">
                         <span class="text-lg font-medium">TimeSheets</span>
                     </div>
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="ic3Doc.png" alt="Dashboard Icon" class="icon">
+                        <img src="icon/landinPage/ic3Doc.png" alt="Dashboard Icon" class="icon">
                         <span class="text-lg font-medium">Dashboard</span>
                     </div>
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="ic4Doc.png" alt="Lists Icon" class="icon">
+                        <img src="icon/landinPage/ic4Doc.png" alt="Lists Icon" class="icon">
                         <span class="text-lg font-medium">Lists</span>
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0">
-                    <img src="Docs.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="icon/landinPage/Docs.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </section>
@@ -558,7 +565,7 @@
                     <p class="case-m-p-bold">Automated Dashboards with actionable insights</p>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0">
-                    <img src="Dasktop.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="icon/landinPage/Dasktop.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </section>
