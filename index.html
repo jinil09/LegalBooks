@@ -33,7 +33,7 @@
             <a href="#" class="hover:text-green-500">Free Consultation</a>
             <!-- <a href="#" class="hover:text-green-500">Pricing</a>
             <a href="#" class="hover:text-green-500">Contact us</a> -->
-            <button class="px-4 py-2 border border-gray-800 text-gray-800 rounded-md" onclick="window.location.href='login.phtml'">Login</button>
+            <button  class="px-4 py-2 border border-gray-800 text-gray-800 rounded-md">Login</button>
             <button class="px-4 py-2 bg-green-500 text-white rounded-md">Sign up</button>
         </div>
     </header>
@@ -87,11 +87,17 @@
                         </div>
                     </div>
                     <div class="space-y-4">
-                        <label for="area" class="block font-bold">Area/City*</label>
-                        <select id="area" name="area" required class="w-full border rounded-md p-2">
-                            <option value="">Select your area</option>
-                            <!-- Add more options as needed -->
-                        </select>
+                        <label for="state" class="block font-bold">State/City*</label>
+                        <div class="flex flex-wrap space-y-4 md:space-y-0 md:space-x-4">
+                            <select id="state" name="state" required class="w-full md:flex-1 border rounded-md p-2">
+                                <option value="">Select your state</option>
+                                <!-- Add state options here -->
+                            </select>
+                            <select id="city" name="city" required class="w-full md:flex-1 border rounded-md p-2">
+                                <option value="">Select your city</option>
+                                <!-- Add city options here -->
+                            </select>
+                        </div>
                     </div>
                     <div class="space-y-4">
                         <label for="practice" class="block font-bold">Select Area of Practice</label>
@@ -108,9 +114,21 @@
                                 <!-- Add more country codes as needed -->
                             </select>
                             <input type="text" id="mobile" name="mobile" placeholder="984803XXXX" required class="w-full md:flex-1 border rounded-md p-2">
+                            <button type="button" id="send-otp" class="bg-gray-800 text-white px-4 py-2 rounded-md">Send OTP</button>
                         </div>
                     </div>
-                    <button type="submit" id="send-otp" class="w-full bg-gray-800 text-white px-4 py-3 rounded-md">Send OTP</button>
+                    <div id="otp-section" class="space-y-4 hidden">
+                        <label for="otp" class="block font-bold">Enter OTP</label>
+                        <div class="flex space-x-4">
+                            <input type="text" id="otp-1" name="otp-1" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <input type="text" id="otp-2" name="otp-2" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <input type="text" id="otp-3" name="otp-3" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <input type="text" id="otp-4" name="otp-4" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <button type="button" id="verify-otp" class="bg-green-800 text-white px-4 py-2 rounded-md">Verify</button>
+                        </div>
+                        <button type="button" id="resend-otp" class="text-blue-500">Resend OTP</button>
+                    </div>
+                    <button type="submit" id="schedule" class="w-full bg-gray-800 text-white px-4 py-3 rounded-md hidden">Schedule</button>
                 </form>
             </section>
         </div>
@@ -124,21 +142,54 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="path/id.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <img src="rental.png" alt="Rental Agreement" class="w-16 mb-2">
                     <p class="text-lg">Rental Agreement</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="path/id.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <img src="Vrental.png" alt="Vehicle Rentals" class="w-16 mb-2">
                     <p class="text-lg">Vehicle Rentals</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="path/id.png" alt="Invoices" class="w-16 mb-2">
-                    <p class="text-lg">Invoices</p>
+                    <img src="employee.png" alt="Invoices" class="w-16 mb-2">
+                    <p class="text-lg">Employer</p>
                 </div>
                 <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
-                    <img src="path/id.png" alt="Equipment License" class="w-16 mb-2">
+                    <img src="subcontractor.png" alt="Equipment License" class="w-16 mb-2">
+                    <p class="text-lg">Subcontractor</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="accounting.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <p class="text-lg">Accounting</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="demandNote.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <p class="text-lg">Demand Note</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="Elicense.png" alt="Invoices" class="w-16 mb-2">
                     <p class="text-lg">Equipment License</p>
                 </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="coFounder Agreement.png" alt="Equipment License" class="w-16 mb-2">
+                    <p class="text-lg">cofounder Agreement</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="Eviction Notice.png" alt="Rental Agreement" class="w-16 mb-2">
+                    <p class="text-lg">Eviction Notice</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="Fund Raising.png" alt="Vehicle Rentals" class="w-16 mb-2">
+                    <p class="text-lg">Fund Raising</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="loan agreement.png" alt="Invoices" class="w-16 mb-2">
+                    <p class="text-lg">Loan Agreement</p>
+                </div>
+                <div class="bg-white p-4 border rounded-lg shadow-lg flex flex-col items-center mb-4">
+                    <img src="patnership.png" alt="Equipment License" class="w-16 mb-2">
+                    <p class="text-lg">Partnership</p>
+                </div>
+                
                 <!-- Repeat the above structure for more document boxes -->
             </div>
         </section>
@@ -148,7 +199,7 @@
             <div class="py-4" id="search-custom-lawyer-container">
                 <div class="max-w-screen-md mx-auto px-4">
                     <div class="" id="search-custom-lawyer">
-                        <button class="input-field mb-2 md:mb-0 bg-blue-500 text-white px-4 py-2 rounded-md" onclick="togglePopup()">Area Of Practice</button>
+                        <button class="input-field mb-2 md:mb-0 bg-blue-500 text-white px-4 py-2 rounded-md area-button" onclick="togglePopup()">Area Of Practice</button>
                         <input type="text" placeholder="City" class="input-field mb-2 md:mb-0">
                         <button class="search-button">Search</button>
                     </div>
@@ -156,226 +207,230 @@
             </div>
         
             <div id="customPopup" class="custom-popup hidden-custom-popup">
-                <h2 class="text-2xl font-bold mb-4">Select Area of Practice</h2>
-                <div class="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'adoption')"> Adoption</label>
-                        <div id="adoption" class="ml-4">
-                            <label><input type="checkbox"> Adoption in Hindus</label>
-                            <label><input type="checkbox"> Adoption in other religions</label>
+                <div class="popup-header">
+                    <h2 class="text-2xl font-bold">Select Area of Practice</h2>
+                    <button class="close-button" onclick="togglePopup()">×</button>
+                </div>
+                <div class="popup-content">
+                    <div class="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'adoption')"> Adoption</label>
+                            <div id="adoption" class="ml-4">
+                                <label><input type="checkbox"> Adoption in Hindus</label>
+                                <label><input type="checkbox"> Adoption in other religions</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'appeals')"> Appeals</label>
-                        <div id="appeals" class="ml-4">
-                            <label><input type="checkbox"> Introduction to Appeals</label>
-                            <label><input type="checkbox"> Supreme Court Appeals</label>
-                            <label><input type="checkbox"> High Court Appeals</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'appeals')"> Appeals</label>
+                            <div id="appeals" class="ml-4">
+                                <label><input type="checkbox"> Introduction to Appeals</label>
+                                <label><input type="checkbox"> Supreme Court Appeals</label>
+                                <label><input type="checkbox"> High Court Appeals</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'banking')"> Banking & Insurance</label>
-                        <div id="banking" class="ml-4">
-                            <label><input type="checkbox"> Insurance</label>
-                            <label><input type="checkbox"> Securitization Act 2002</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'banking')"> Banking & Insurance</label>
+                            <div id="banking" class="ml-4">
+                                <label><input type="checkbox"> Insurance</label>
+                                <label><input type="checkbox"> Securitization Act 2002</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'business')"> Business & Commercial Law</label>
-                        <div id="business" class="ml-4">
-                            <label><input type="checkbox"> Contract</label>
-                            <label><input type="checkbox"> Dishonor of Cheque</label>
-                            <label><input type="checkbox"> Partnership</label>
-                            <label><input type="checkbox"> Shares</label>
-                            <label><input type="checkbox"> Foreign Exchange Management Act (FEMA)</label>
-                            <label><input type="checkbox"> Carriage of Goods</label>
-                            <label><input type="checkbox"> Sale of Goods</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'business')"> Business & Commercial Law</label>
+                            <div id="business" class="ml-4">
+                                <label><input type="checkbox"> Contract</label>
+                                <label><input type="checkbox"> Dishonor of Cheque</label>
+                                <label><input type="checkbox"> Partnership</label>
+                                <label><input type="checkbox"> Shares</label>
+                                <label><input type="checkbox"> Foreign Exchange Management Act (FEMA)</label>
+                                <label><input type="checkbox"> Carriage of Goods</label>
+                                <label><input type="checkbox"> Sale of Goods</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'constitution')"> Constitution & Law Procedure</label>
-                        <div id="constitution" class="ml-4">
-                            <label><input type="checkbox"> Suits</label>
-                            <label><input type="checkbox"> Suit Procedure</label>
-                            <label><input type="checkbox"> Civil Procedure Code Relief</label>
-                            <label><input type="checkbox"> Civil Procedure Code Jurisdiction</label>
-                            <label><input type="checkbox"> Public Interest Litigation</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'constitution')"> Constitution & Law Procedure</label>
+                            <div id="constitution" class="ml-4">
+                                <label><input type="checkbox"> Suits</label>
+                                <label><input type="checkbox"> Suit Procedure</label>
+                                <label><input type="checkbox"> Civil Procedure Code Relief</label>
+                                <label><input type="checkbox"> Civil Procedure Code Jurisdiction</label>
+                                <label><input type="checkbox"> Public Interest Litigation</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'consumer')"> Consumer Rights</label>
-                        <div id="consumer" class="ml-4">
-                            <label><input type="checkbox"> Food Adulteration</label>
-                            <label><input type="checkbox"> Monopolistic and Restrictive Trade Practice (MRTP)</label>
-                            <label><input type="checkbox"> Consumer Protection Act</label>
-                            <label><input type="checkbox"> Medical Negligence</label>
-                            <label><input type="checkbox"> Standard Weight and Measures</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'consumer')"> Consumer Rights</label>
+                            <div id="consumer" class="ml-4">
+                                <label><input type="checkbox"> Food Adulteration</label>
+                                <label><input type="checkbox"> Monopolistic and Restrictive Trade Practice (MRTP)</label>
+                                <label><input type="checkbox"> Consumer Protection Act</label>
+                                <label><input type="checkbox"> Medical Negligence</label>
+                                <label><input type="checkbox"> Standard Weight and Measures</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'corporate')"> Corporate Law</label>
-                        <div id="corporate" class="ml-4">
-                            <label><input type="checkbox"> Arbitration</label>
-                            <label><input type="checkbox"> Society Act</label>
-                            <label><input type="checkbox"> Incorporation of a Private Company</label>
-                            <label><input type="checkbox"> Winding up of Company</label>
-                            <label><input type="checkbox"> Litigation against Company</label>
-                            <label><input type="checkbox"> Trust and Society</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'corporate')"> Corporate Law</label>
+                            <div id="corporate" class="ml-4">
+                                <label><input type="checkbox"> Arbitration</label>
+                                <label><input type="checkbox"> Society Act</label>
+                                <label><input type="checkbox"> Incorporation of a Private Company</label>
+                                <label><input type="checkbox"> Winding up of Company</label>
+                                <label><input type="checkbox"> Litigation against Company</label>
+                                <label><input type="checkbox"> Trust and Society</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'criminal')"> Criminal Law</label>
-                        <div id="criminal" class="ml-4">
-                            <label><input type="checkbox"> Anticipatory Bail</label>
-                            <label><input type="checkbox"> Arrest and Warrants</label>
-                            <label><input type="checkbox"> Bail and Antcipatory Bail</label>
-                            <label><input type="checkbox"> Summons</label>
-                            <label><input type="checkbox"> FIR</label>
-                            <label><input type="checkbox"> Investigation</label>
-                            <label><input type="checkbox"> Adultery</label>
-                            <label><input type="checkbox"> Adulteration of Drugs</label>
-                            <label><input type="checkbox"> Adulteration of food or drink intended for sale</label>
-                            <label><input type="checkbox"> Causing death by negligence</label>
-                            <label><input type="checkbox"> Cheating and dishonestly inducing delivery of property</label>
-                            <label><input type="checkbox"> Concealment of former marriage</label>
-                            <label><input type="checkbox"> Criminal Misappropriation of property</label>
-                            <label><input type="checkbox"> Defamation</label>
-                            <label><input type="checkbox"> Defense of Property</label>
-                            <label><input type="checkbox"> Dowry death</label>
-                            <label><input type="checkbox"> Extortion</label>
-                            <label><input type="checkbox"> Forgery</label>
-                            <label><input type="checkbox"> Husband or relative subjecting the women to cruelty</label>
-                            <label><input type="checkbox"> Kidnapping</label>
-                            <label><input type="checkbox"> Marrying again during the lifetime of husband or wife</label>
-                            <label><input type="checkbox"> Nuisance</label>
-                            <label><input type="checkbox"> Obscene Acts and Songs</label>
-                            <label><input type="checkbox"> Rape</label>
-                            <label><input type="checkbox"> Rash driving or riding on a public way</label>
-                            <label><input type="checkbox"> Right of Private Defense</label>
-                            <label><input type="checkbox"> Right of Private Defense against deadly assault when there is risk of harm to innocent person</label>
-                            <label><input type="checkbox"> Right of Private Defense against the act of a person of unsound mind</label>
-                            <label><input type="checkbox"> Right of Private Defense of the body and of property</label>
-                            <label><input type="checkbox"> Sale etc. of obscene books</label>
-                            <label><input type="checkbox"> Selling goods marked with counterfeit Property Mark</label>
-                            <label><input type="checkbox"> Theft</label>
-                            <label><input type="checkbox"> When the right of private defense of the body extends to causing death</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'criminal')"> Criminal Law</label>
+                            <div id="criminal" class="ml-4">
+                                <label><input type="checkbox"> Anticipatory Bail</label>
+                                <label><input type="checkbox"> Arrest and Warrants</label>
+                                <label><input type="checkbox"> Bail and Antcipatory Bail</label>
+                                <label><input type="checkbox"> Summons</label>
+                                <label><input type="checkbox"> FIR</label>
+                                <label><input type="checkbox"> Investigation</label>
+                                <label><input type="checkbox"> Adultery</label>
+                                <label><input type="checkbox"> Adulteration of Drugs</label>
+                                <label><input type="checkbox"> Adulteration of food or drink intended for sale</label>
+                                <label><input type="checkbox"> Causing death by negligence</label>
+                                <label><input type="checkbox"> Cheating and dishonestly inducing delivery of property</label>
+                                <label><input type="checkbox"> Concealment of former marriage</label>
+                                <label><input type="checkbox"> Criminal Misappropriation of property</label>
+                                <label><input type="checkbox"> Defamation</label>
+                                <label><input type="checkbox"> Defense of Property</label>
+                                <label><input type="checkbox"> Dowry death</label>
+                                <label><input type="checkbox"> Extortion</label>
+                                <label><input type="checkbox"> Forgery</label>
+                                <label><input type="checkbox"> Husband or relative subjecting the women to cruelty</label>
+                                <label><input type="checkbox"> Kidnapping</label>
+                                <label><input type="checkbox"> Marrying again during the lifetime of husband or wife</label>
+                                <label><input type="checkbox"> Nuisance</label>
+                                <label><input type="checkbox"> Obscene Acts and Songs</label>
+                                <label><input type="checkbox"> Rape</label>
+                                <label><input type="checkbox"> Rash driving or riding on a public way</label>
+                                <label><input type="checkbox"> Right of Private Defense</label>
+                                <label><input type="checkbox"> Right of Private Defense against deadly assault when there is risk of harm to innocent person</label>
+                                <label><input type="checkbox"> Right of Private Defense against the act of a person of unsound mind</label>
+                                <label><input type="checkbox"> Right of Private Defense of the body and of property</label>
+                                <label><input type="checkbox"> Sale etc. of obscene books</label>
+                                <label><input type="checkbox"> Selling goods marked with counterfeit Property Mark</label>
+                                <label><input type="checkbox"> Theft</label>
+                                <label><input type="checkbox"> When the right of private defense of the body extends to causing death</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'divorce')"> Divorce Laws in India</label>
-                        <div id="divorce" class="ml-4">
-                            <label><input type="checkbox"> India Divorce</label>
-                            <label><input type="checkbox"> Divorce Laws in India</label>
-                            <label><input type="checkbox"> Pre- Divorce Preparation</label>
-                            <label><input type="checkbox"> Filing for Divorce in India</label>
-                            <label><input type="checkbox"> Divorce Procedure in India</label>
-                            <label><input type="checkbox"> Mutual Divorce in India</label>
-                            <label><input type="checkbox"> Grounds for Divorce in India</label>
-                            <label><input type="checkbox"> Divorce Lawyers in India</label>
-                            <label><input type="checkbox"> Divorce rate in India</label>
-                            <label><input type="checkbox"> Divorce rate in Urban India</label>
-                            <label><input type="checkbox"> Alimony in India</label>
-                            <label><input type="checkbox"> NRI Divorce</label>
-                            <label><input type="checkbox"> Child Support</label>
-                            <label><input type="checkbox"> Dealing with Divorce</label>
-                            <label><input type="checkbox"> Advice on Divorce</label>
-                            <label><input type="checkbox"> Divorce Depression</label>
-                            <label><input type="checkbox"> Adultery Divorce</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'divorce')"> Divorce Laws in India</label>
+                            <div id="divorce" class="ml-4">
+                                <label><input type="checkbox"> India Divorce</label>
+                                <label><input type="checkbox"> Divorce Laws in India</label>
+                                <label><input type="checkbox"> Pre- Divorce Preparation</label>
+                                <label><input type="checkbox"> Filing for Divorce in India</label>
+                                <label><input type="checkbox"> Divorce Procedure in India</label>
+                                <label><input type="checkbox"> Mutual Divorce in India</label>
+                                <label><input type="checkbox"> Grounds for Divorce in India</label>
+                                <label><input type="checkbox"> Divorce Lawyers in India</label>
+                                <label><input type="checkbox"> Divorce rate in India</label>
+                                <label><input type="checkbox"> Divorce rate in Urban India</label>
+                                <label><input type="checkbox"> Alimony in India</label>
+                                <label><input type="checkbox"> NRI Divorce</label>
+                                <label><input type="checkbox"> Child Support</label>
+                                <label><input type="checkbox"> Dealing with Divorce</label>
+                                <label><input type="checkbox"> Advice on Divorce</label>
+                                <label><input type="checkbox"> Divorce Depression</label>
+                                <label><input type="checkbox"> Adultery Divorce</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'environmental')"> Environmental Law</label>
-                        <div id="environmental" class="ml-4">
-                            <label><input type="checkbox"> Air Pollution</label>
-                            <label><input type="checkbox"> Wild Life Protection</label>
-                            <label><input type="checkbox"> Environment Protection</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'environmental')"> Environmental Law</label>
+                            <div id="environmental" class="ml-4">
+                                <label><input type="checkbox"> Air Pollution</label>
+                                <label><input type="checkbox"> Wild Life Protection</label>
+                                <label><input type="checkbox"> Environment Protection</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'government')"> Government Policies</label>
-                        <div id="government" class="ml-4">
-                            <label><input type="checkbox"> Foreign Trade Policy 2005</label>
-                            <label><input type="checkbox"> Dual Citizenship</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'government')"> Government Policies</label>
+                            <div id="government" class="ml-4">
+                                <label><input type="checkbox"> Foreign Trade Policy 2005</label>
+                                <label><input type="checkbox"> Dual Citizenship</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'inheritance')"> Inheritance</label>
-                        <div id="inheritance" class="ml-4">
-                            <label><input type="checkbox"> Hindu Succession Act</label>
-                            <label><input type="checkbox"> Inheritance and I.S.A</label>
-                            <label><input type="checkbox"> Inheritance in Muslims</label>
-                            <label><input type="checkbox"> Wills in Muslims</label>
-                            <label><input type="checkbox"> Wills under Indian Succession Act</label>
-                            <label><input type="checkbox"> Probate of Wills</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'inheritance')"> Inheritance</label>
+                            <div id="inheritance" class="ml-4">
+                                <label><input type="checkbox"> Hindu Succession Act</label>
+                                <label><input type="checkbox"> Inheritance and I.S.A</label>
+                                <label><input type="checkbox"> Inheritance in Muslims</label>
+                                <label><input type="checkbox"> Wills in Muslims</label>
+                                <label><input type="checkbox"> Wills under Indian Succession Act</label>
+                                <label><input type="checkbox"> Probate of Wills</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'intellectual')"> Intellectual Property</label>
-                        <div id="intellectual" class="ml-4">
-                            <label><input type="checkbox"> Intellectual Property Rights</label>
-                            <label><input type="checkbox"> Copyright Laws in India</label>
-                            <label><input type="checkbox"> Patent Laws in India</label>
-                            <label><input type="checkbox"> Trademark Laws in India</label>
-                            <label><input type="checkbox"> Information Technology Act</label>
-                            <label><input type="checkbox"> Service Marks</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'intellectual')"> Intellectual Property</label>
+                            <div id="intellectual" class="ml-4">
+                                <label><input type="checkbox"> Intellectual Property Rights</label>
+                                <label><input type="checkbox"> Copyright Laws in India</label>
+                                <label><input type="checkbox"> Patent Laws in India</label>
+                                <label><input type="checkbox"> Trademark Laws in India</label>
+                                <label><input type="checkbox"> Information Technology Act</label>
+                                <label><input type="checkbox"> Service Marks</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'labor')"> Labor Law</label>
-                        <div id="labor" class="ml-4">
-                            <label><input type="checkbox"> Child Labor Laws</label>
-                            <label><input type="checkbox"> Employees State Insurance Act</label>
-                            <label><input type="checkbox"> Workmen's Compensation</label>
-                            <label><input type="checkbox"> Provident Fund</label>
-                            <label><input type="checkbox"> Maternity Benefits</label>
-                            <label><input type="checkbox"> Payment of Bonus</label>
-                            <label><input type="checkbox"> Sexual harassment at workplace</label>
-                            <label><input type="checkbox"> Trade Unions</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'labor')"> Labor Law</label>
+                            <div id="labor" class="ml-4">
+                                <label><input type="checkbox"> Child Labor Laws</label>
+                                <label><input type="checkbox"> Employees State Insurance Act</label>
+                                <label><input type="checkbox"> Workmen's Compensation</label>
+                                <label><input type="checkbox"> Provident Fund</label>
+                                <label><input type="checkbox"> Maternity Benefits</label>
+                                <label><input type="checkbox"> Payment of Bonus</label>
+                                <label><input type="checkbox"> Sexual harassment at workplace</label>
+                                <label><input type="checkbox"> Trade Unions</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'marriage')"> Marriage Law</label>
-                        <div id="marriage" class="ml-4">
-                            <label><input type="checkbox"> Divorce under Hindu Marriage Act</label>
-                            <label><input type="checkbox"> Divorce in Muslims</label>
-                            <label><input type="checkbox"> Dowry</label>
-                            <label><input type="checkbox"> Family Courts</label>
-                            <label><input type="checkbox"> Muslim Women's right to maintenance</label>
-                            <label><input type="checkbox"> Hindu Marriage Act</label>
-                            <label><input type="checkbox"> Maintenance U/S 125</label>
-                            <label><input type="checkbox"> Maintenance in Hindus</label>
-                            <label><input type="checkbox"> Registered Marriage</label>
-                            <label><input type="checkbox"> Marriage in Muslims</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'marriage')"> Marriage Law</label>
+                            <div id="marriage" class="ml-4">
+                                <label><input type="checkbox"> Divorce under Hindu Marriage Act</label>
+                                <label><input type="checkbox"> Divorce in Muslims</label>
+                                <label><input type="checkbox"> Dowry</label>
+                                <label><input type="checkbox"> Family Courts</label>
+                                <label><input type="checkbox"> Muslim Women's right to maintenance</label>
+                                <label><input type="checkbox"> Hindu Marriage Act</label>
+                                <label><input type="checkbox"> Maintenance U/S 125</label>
+                                <label><input type="checkbox"> Maintenance in Hindus</label>
+                                <label><input type="checkbox"> Registered Marriage</label>
+                                <label><input type="checkbox"> Marriage in Muslims</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'personal')"> Personal Law</label>
-                        <div id="personal" class="ml-4">
-                            <label><input type="checkbox"> Gifts under Hindu Law</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'personal')"> Personal Law</label>
+                            <div id="personal" class="ml-4">
+                                <label><input type="checkbox"> Gifts under Hindu Law</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'property')"> Property & Real Estate</label>
-                        <div id="property" class="ml-4">
-                            <label><input type="checkbox"> Sale of Property</label>
-                            <label><input type="checkbox"> Lease</label>
-                            <label><input type="checkbox"> Mortgage</label>
-                            <label><input type="checkbox"> Hire Purchase</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'property')"> Property & Real Estate</label>
+                            <div id="property" class="ml-4">
+                                <label><input type="checkbox"> Sale of Property</label>
+                                <label><input type="checkbox"> Lease</label>
+                                <label><input type="checkbox"> Mortgage</label>
+                                <label><input type="checkbox"> Hire Purchase</label>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'tax')"> Tax Laws</label>
-                        <div id="tax" class="ml-4">
-                            <label><input type="checkbox"> Central Excise</label>
-                            <label><input type="checkbox"> Custom Duty</label>
-                            <label><input type="checkbox"> Income Tax</label>
-                            <label><input type="checkbox"> Laws of anti dumping in India</label>
-                            <label><input type="checkbox"> Service Tax</label>
-                            <label><input type="checkbox"> GST</label>
+                        <div>
+                            <label class="font-bold"><input type="checkbox" onclick="toggleSpecializations(this, 'tax')"> Tax Laws</label>
+                            <div id="tax" class="ml-4">
+                                <label><input type="checkbox"> Central Excise</label>
+                                <label><input type="checkbox"> Custom Duty</label>
+                                <label><input type="checkbox"> Income Tax</label>
+                                <label><input type="checkbox"> Laws of anti dumping in India</label>
+                                <label><input type="checkbox"> Service Tax</label>
+                                <label><input type="checkbox"> GST</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-4" onclick="closePopup()">Close</button>
             </div>
 
             
@@ -385,7 +440,7 @@
                 <!-- Example lawyer card, repeat as needed -->
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -393,7 +448,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -401,7 +456,7 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
@@ -409,12 +464,45 @@
                 </div>
                 <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
                     <div class="lawyer-type">Criminal Lawyer</div>
-                    <img src="path/id.png" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
                     <h3 class="text-lg font-semibold my-2">Raghavan</h3>
                     <p class="mb-1">Hyderabad</p>
                     <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
                     <p class="text-sm mb-2">9 Reviews</p>
                 </div>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
+                </div>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
+                </div>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
+                </div>
+                <div class="lawyer-card bg-white rounded-lg shadow-md flex flex-col items-center mb-4">
+                    <div class="lawyer-type">Criminal Lawyer</div>
+                    <img src="Lawyer.jpeg" alt="Raghavan" class="w-32 h-32 object-cover rounded-full mt-2">
+                    <h3 class="text-lg font-semibold my-2">Raghavan</h3>
+                    <p class="mb-1">Hyderabad</p>
+                    <div class="stars text-yellow-500">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm mb-2">9 Reviews</p>
+                </div>
+            
                 
                 <!-- Repeat other lawyer-card elements as needed -->
             </div>
@@ -428,24 +516,24 @@
             <div class="container mx-auto flex flex-col md:flex-row items-center justify-evenly px-6">
                 <div class="md:w-1/4 text-left space-y-4 case-management">
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="path/id.png" alt="Docs Icon" class="icon">
+                        <img src="ic1Doc.png" alt="Docs Icon" class="icon">
                         <span class="text-lg font-medium">DOCS</span>
                     </div>
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="path/id.png" alt="Time Sheets Icon" class="icon">
+                        <img src="ic2Doc.png" alt="Time Sheets Icon" class="icon">
                         <span class="text-lg font-medium">TimeSheets</span>
                     </div>
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="path/id.png" alt="Dashboard Icon" class="icon">
+                        <img src="ic3Doc.png" alt="Dashboard Icon" class="icon">
                         <span class="text-lg font-medium">Dashboard</span>
                     </div>
                     <div class="flex items-center mb-4 case-management-row bg-white shadow-md p-4 rounded-md hover:bg-blue-900 transition duration-300">
-                        <img src="path/id.png" alt="Lists Icon" class="icon">
+                        <img src="ic4Doc.png" alt="Lists Icon" class="icon">
                         <span class="text-lg font-medium">Lists</span>
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0">
-                    <img src="img.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="Docs.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </section>
@@ -470,7 +558,7 @@
                     <p class="case-m-p-bold">Automated Dashboards with actionable insights</p>
                 </div>
                 <div class="md:w-1/2 mt-6 md:mt-0">
-                    <img src="img.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="Dasktop.png" alt="Case Management Dashboard" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </section>
