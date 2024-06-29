@@ -25,3 +25,16 @@ document.addEventListener('click', function(event) {
 document.querySelector(".navbar-toggler").addEventListener("click", () => {
   document.querySelector(".mobile-menu").classList.toggle("visible");
 });
+
+document.getElementById('send-otp').addEventListener('click', function() {
+  document.getElementById('otp-section').classList.remove('hidden');
+});
+
+document.getElementById('verify-otp').addEventListener('click', function() {
+  // Add OTP verification logic here
+  document.getElementById('schedule').classList.remove('hidden');
+});
+
+document.getElementById('resend-otp').addEventListener('click', function() {
+  // Add resend OTP logic here
+});
