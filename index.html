@@ -48,11 +48,11 @@
         <div class="container mx-auto py-8 form-container">
             <section class="p-8 m-4 login-form flex flex-col items-center text-center">
                 <h2 class="text-3xl font-bold mb-4">Log In</h2>
-                <button class="w-full bg-blue-500 text-white px-4 py-3 rounded-md flex items-center justify-center mb-4">
+                <button class="w-full text-black px-4 py-3 rounded-md flex items-center justify-center mb-4 border-2 border-black">
                     <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google logo" class="mr-2">
                     Continue with Google
                 </button>
-                <button class="w-full bg-black text-white px-4 py-3 rounded-md flex items-center justify-center mb-4">
+                <button class="w-full bg-blue-900 text-white px-4 py-3 rounded-md flex items-center justify-center mb-4">
                     <img src="https://img.icons8.com/ios-filled/16/ffffff/phone.png" alt="Phone logo" class="mr-2">
                     Continue with Mobile Number
                 </button>
@@ -128,7 +128,25 @@
                         </div>
                         <button type="button" id="resend-otp" class="text-blue-500">Resend OTP</button>
                     </div>
-                    <button type="submit" id="schedule" class="w-full bg-gray-800 text-white px-4 py-3 rounded-md hidden">Schedule</button>
+                    <div class="space-y-4">
+                        <label for="email" class="block font-bold">Email (Optional)</label>
+                        <div class="flex flex-wrap space-y-4 md:space-y-0 md:space-x-4">
+                            <input type="email" id="email" name="email" placeholder="example@example.com" class="w-full md:flex-1 border rounded-md p-2">
+                            <button type="button" id="send-email-otp" class="bg-gray-800 text-white px-4 py-2 rounded-md">Send OTP</button>
+                        </div>
+                    </div>
+                    <div id="email-otp-section" class="space-y-4 hidden">
+                        <label for="email-otp" class="block font-bold">Enter Email OTP</label>
+                        <div class="flex space-x-4">
+                            <input type="text" id="email-otp-1" name="email-otp-1" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <input type="text" id="email-otp-2" name="email-otp-2" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <input type="text" id="email-otp-3" name="email-otp-3" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <input type="text" id="email-otp-4" name="email-otp-4" maxlength="1" class="w-12 border rounded-md p-2 text-center">
+                            <button type="button" id="verify-email-otp" class="bg-green-800 text-white px-4 py-2 rounded-md">Verify</button>
+                        </div>
+                        <button type="button" id="resend-email-otp" class="text-blue-500">Resend OTP</button>
+                    </div>
+                    <button type="submit" id="schedule" class="w-full bg-gray-800 text-white px-4 py-3 rounded-md hidden" disabled>Schedule</button>
                 </form>
             </section>
         </div>
