@@ -38,3 +38,17 @@ document.getElementById('verify-otp').addEventListener('click', function() {
 document.getElementById('resend-otp').addEventListener('click', function() {
   // Add resend OTP logic here
 });
+
+document.getElementById('send-email-otp').addEventListener('click', function() {
+  document.getElementById('email-otp-section').classList.remove('hidden');
+});
+
+document.getElementById('verify-email-otp').addEventListener('click', function() {
+  // Add your email OTP verification logic here
+  document.getElementById('schedule').classList.remove('hidden');
+  document.getElementById('schedule').disabled = false;
+});
+
+document.getElementById('resend-email-otp').addEventListener('click', function() {
+  // Add your resend email OTP logic here
+});
